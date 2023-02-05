@@ -1,0 +1,49 @@
+---
+layout: center
+class: "text-center"
+---
+
+## Optimisers
+
+> Which method to use to find the minimum of the error function.
+
+<style>
+h2 {
+  margin-bottom: 1.5rem;
+}
+</style>
+
+---
+layout: center
+class: "text-justify"
+---
+
+<div class="flex items-center gap-8">
+
+<div>
+
+The optimiser is the method to calculate the gradient steps before backpropagation
+after each epoch.
+The right optimiser is dependent on the problem that the model tries to solve,
+the selection of the right optimiser is more of an empirical process (trial and error).
+The most used optimiser is **adam**. It is usually a good starting point
+when developing a new model.
+In the stock price analysis, 4 optimisers are mentioned:
+
+1. RMSprop
+2. Adam
+3. AdaMax
+4. Nadam
+
+In all models, the developers used **adam** as their optimiser.
+
+</div>
+
+![](/images/Optimisers.png)
+</div>
+
+<style>
+img {
+  min-width: 400px;
+}
+</style>

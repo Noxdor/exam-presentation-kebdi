@@ -1,0 +1,21 @@
+{
+  "name": "exam-presentation",
+  "private": true,
+  "scripts": {
+    "build": "slidev build",
+    "dev": "slidev",
+    "export": "slidev export --dark --output export/presentation_kebdi_lennart_guderian.pdf"
+  },
+  "dependencies": {
+    "@slidev/cli": "^0.39.0",
+    "@slidev/theme-default": "*",
+    "@slidev/theme-seriph": "^0.21.3"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.50.0",
+    "@typescript-eslint/parser": "^5.50.0",
+    "eslint": "^8.33.0",
+    "eslint-plugin-vue": "^9.9.0",
+    "playwright-chromium": "^1.30.0"
+  }
+}

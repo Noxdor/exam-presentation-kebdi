@@ -1,0 +1,72 @@
+---
+layout: two-cols
+---
+
+## Pseudo-Code
+
+```typescript
+function expandNode(currentNode)
+    foreach successor of currentNode
+        // skip if already on closed list
+        if closedlist.contains(successor) then
+            continue
+        // calculate g value for the new path
+        tentative_g = g(currentNode)
+                    + c(currentNode, successor)
+
+        // skip if new path is not better
+        if openlist.contains(successor) and
+            tentative_g >= g(successor) then
+            continue
+
+        successor.predecessor := currentNode
+        g(successor) = tentative_g
+
+        // update g-value of node
+        f := tentative_g + h(successor)
+
+        if openlist.contains(successor) then
+            openlist.updateKey(successor, f)
+        else
+            openlist.enqueue(successor, f)
+    end
+```
+
+::right::
+
+## Implementation (Rust)
+
+```rust
+pub fn expand_node( /* ... */ ) {
+    for (node_name, cost) in &current_node.neighbours {  
+        let mut node = /* get node from node list */
+
+        if closed_list
+        .iter()
+        .find(|closed_node| closed_node.name == node.name)
+        .is_some() { continue; }
+
+        // calculate g value for the new path
+        let g = current_node.g + *cost;
+        let contained_in_open_list = /* condition */ 
+        // skip if new path is not better
+        if contained_in_open_list && g >= node.g {
+            continue;
+        }
+
+        node.predecessor =
+        Some(Box::new(current_node.clone()));
+        node.g = g;
+        if !contained_in_open_list {
+            open_list.push(node.clone());
+        }
+    }
+}
+```
+
+---
+layout: center
+---
+
+The full codebase can be found [here](https://github.com/Noxdor/wasm-astar).
+
